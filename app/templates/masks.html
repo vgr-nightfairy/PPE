@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>N95 Masks</h1>
+    <p> Please report your facility's current stats for N95 Masks. For each brand of N95 Mask, submit a separate update.</p>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p> Brand of N95 Mask. If other, please specify. </p>
+        <p>
+            {{ form.brand}}<br>
+            {% for error in form.brand.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.other.label }}<br>
+            {{ form.other(size=64) }}<br>
+            {% for error in form.other.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p> Size of N95 Mask in selected brand.</p>
+         <p>
+            {{ form.size}}<br>
+            {% for error in form.size.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+         <p>
+            {{ form.number.label }}<br>
+            {{ form.number(size=64) }}<br>
+            {% for error in form.number.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+         <p>
+            {{ form.item_number.label }}<br>
+            {{ form.item_number(size=64) }}<br>
+            {% for error in form.item_number.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+         <p>
+            {{ form.daily_use.label }}<br>
+            {{ form.daily_use(size=64) }}<br>
+            {% for error in form.daily_use.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+         <p>
+            {{ form.projected_daily_use.label }}<br>
+            {{ form.projected_daily_use(size=64) }}<br>
+            {% for error in form.projected_daily_use.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+         <p>
+            {{ form.projected_run_out.label }}<br>
+            {{ form.projected_run_out(size=64) }}<br>
+            {% for error in form.projected_run_out.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+         <p>
+            {{ form.comments.label }}<br>
+            {{ form.comments(size=64) }}<br>
+            {% for error in form.comments.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
