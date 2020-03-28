@@ -31,7 +31,7 @@ Essentially, this includes a form that gathers detailed information about curren
 push to the database, and a real-time visualization of the aggregate count of N95 Masks per facility via the main
 dashboard.
 
-Run in virtualenv. Install dependencies as they come up (sorry, currently no requirements.txt file).
+Run in virtualenv. Install dependencies with pip install -r requirements.txt.
 Set >> FLASK_APP=ppe.py. To get localhost link to see webapp, execute >> flask run.
 When making changes to models.py, it is imperative to run >> flask db migrate    and     >> flask db upgrade
 to track ongoing versions of the database. 
